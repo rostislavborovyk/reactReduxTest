@@ -1,12 +1,28 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import './static/index.css';
 import * as serviceWorker from './serviceWorker';
+
+import {configureStore} from "@reduxjs/toolkit";
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+
+import App from './components/App';
+import {Provider} from "react-redux";
+import {reducer} from "./reduxToolkit/reducers";
+import Track from "./components/Track";
+
+const store = configureStore({
+  reducer: reducer,
+})
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <Router>
+        <Route path="/" exact component={App}/>
+        <Route path="/track/:id" component={Track}/>
+      </Router>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );

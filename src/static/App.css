@@ -1,0 +1,32 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: center;
+  background-color: #faebd7;
+}
+.navbarContainer .navbarContainer__input {
+  padding: 20px;
+  background-color: #eadbb7;
+  border-radius: 15px;
+}
+
+.tracksContainer .tracksContainer__element {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.tracksContainer .tracksContainer__element .tracksContainer__track {
+  width: 400px;
+  text-align: center;
+  background-color: #f0c0c0;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+/*# sourceMappingURL=App.css.map */

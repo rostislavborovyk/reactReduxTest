@@ -1,0 +1,39 @@
+$c1: #faebd7;
+$c2: #eadbb7;
+$c3: #f0c0c0;
+
+$bradius: 15px;
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.navbarContainer {
+  display: flex;
+  justify-content: center;
+  background-color: $c1;
+
+  .navbarContainer__input {
+    padding: 20px;
+    background-color: $c2;
+    border-radius: $bradius;
+  }
+}
+
+.tracksContainer {
+  .tracksContainer__element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    .tracksContainer__track {
+      width: 400px;
+      text-align: center;
+      background-color: $c3;
+      border-radius: $bradius;
+      padding: 10px;
+    }
+  }
+}
