@@ -23,38 +23,52 @@ function App(props) {
     props.filterTrack(elem.target.value)
   }
 
+  const onDeleteTrack = (elem) => {
+    props.deleteTrack(elem.target.id)
+  }
+
   return (
     <Fragment>
-      <div className="mainContainer">
-        <div className="navbarContainer">
-          <div className="navbarContainer__input">
-            <input type="text" id="addTrack"/>
-            <button onClick={onAddTrack}>Add track</button>
-          </div>
-          <div className="navbarContainer__input">
-            <label>Find track: </label>
-            <input type="text" id="filterTrack" onChange={onFilterTrack} placeholder="track name..."/>
+      <div className="wrapper">
+        <div className="navbar">
+          <div className="container">
+            <div className="navbar__row">
+              <div className="navbar__input">
+                <input type="text" id="addTrack"/>
+                <button onClick={onAddTrack}>Add track</button>
+              </div>
+              <div className="navbar__input">
+                <label>Find track: </label>
+                <input type="text" id="filterTrack" onChange={onFilterTrack} placeholder="track name..."/>
+              </div>
+            </div>
           </div>
         </div>
-        <div className="tracksContainer">
-          {
-            props.tracks.length
-              ?
-              props.tracks.map(track => (
-                <div key={track.id} className="tracksContainer__element">
-                  {/*<div key={track.id} className="tracksContainer__track">*/}
-                  {/*  <Link to={`/track/${track.id}`}>{track.name}</Link>*/}
-                  {/*</div>*/}
-                  <Link to={`/track/${track.id}`}>
-                    <div key={track.id} className="tracksContainer__track">
-                      {track.name}
+        <div className="tracks">
+          <div className="container">
+            <ul className="tracks__list">
+              {
+                props.tracks.length
+                  ?
+                  props.tracks.map(track => (
+                    <div key={track.id} className="tracks__track">
+                      <Link key={track.id} to={`/track/${track.id}`}>
+                        <li key={track.id}>
+                          {track.name}
+                        </li>
+                      </Link>
+                      <div className="tracks__delete">
+                        <button id={track.id} onClick={onDeleteTrack}>
+                          delete
+                        </button>
+                      </div>
                     </div>
-                  </Link>
-                </div>
-              ))
-              :
-              "Not any tracks yet"
-          }
+                  ))
+                  :
+                  <li>Not any tracks yet</li>
+              }
+            </ul>
+          </div>
         </div>
       </div>
     </Fragment>
@@ -72,6 +86,9 @@ export default connect(
       const id = Date.now().toString();
       const payload = {id, name};
       dispatch(tracksSlice.actions.addTrack(payload))
+    },
+    deleteTrack: id => {
+      dispatch(tracksSlice.actions.deleteTrack(id))
     },
     filterTrack: name => {
       dispatch(filterTrackSlice.actions.filterTrack(name))

@@ -13,6 +13,12 @@ export const tracksSlice = createSlice({
         action.payload
       ]
     },
+    deleteTrack: (state, action) => {
+      const res = state.filter(track => track.id.toString() !== action.payload)
+      return [
+        ...res
+      ]
+    },
   },
   extraReducers: {
     [getTracks.fulfilled]: (state, action) => {

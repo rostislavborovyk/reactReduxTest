@@ -1,39 +1,66 @@
 $c1: #faebd7;
 $c2: #eadbb7;
-$c3: #f0c0c0;
+$c3: #80abdb;
+$c4: #f08080;
 
 $bradius: 15px;
 
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
 
-.navbarContainer {
+.navbar {
   display: flex;
   justify-content: center;
   background-color: $c1;
 
-  .navbarContainer__input {
+  .navbar__input {
     padding: 20px;
     background-color: $c2;
     border-radius: $bradius;
   }
+
+  .navbar__row {
+    display: flex;
+    flex-direction: row;
+  }
 }
 
-.tracksContainer {
-  .tracksContainer__element {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
-    .tracksContainer__track {
-      width: 400px;
-      text-align: center;
+.tracks {
+  display: flex;
+  justify-content: space-around;
+
+  .container {
+    width: 30%;
+
+    .tracks__list {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+
+      li {
+        list-style-type: none;
+      }
+    }
+
+    .tracks__track {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px;
+      margin: 5px;
       background-color: $c3;
       border-radius: $bradius;
-      padding: 10px;
     }
   }
+}
+
+.tracks__delete button {
+  background-color: $c4;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: $bradius;
 }

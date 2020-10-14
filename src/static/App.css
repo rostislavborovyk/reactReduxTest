@@ -1,32 +1,54 @@
-.mainContainer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.navbarContainer {
+.navbar {
   display: flex;
   justify-content: center;
   background-color: #faebd7;
 }
-.navbarContainer .navbarContainer__input {
+.navbar .navbar__input {
   padding: 20px;
   background-color: #eadbb7;
   border-radius: 15px;
 }
-
-.tracksContainer .tracksContainer__element {
+.navbar .navbar__row {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 10px;
+  flex-direction: row;
 }
-.tracksContainer .tracksContainer__element .tracksContainer__track {
-  width: 400px;
-  text-align: center;
-  background-color: #f0c0c0;
+
+.tracks {
+  display: flex;
+  justify-content: space-around;
+}
+.tracks .container {
+  width: 30%;
+}
+.tracks .container .tracks__list {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0;
+}
+.tracks .container .tracks__list li {
+  list-style-type: none;
+}
+.tracks .container .tracks__track {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  margin: 5px;
+  background-color: #80abdb;
   border-radius: 15px;
-  padding: 10px;
+}
+
+.tracks__delete button {
+  background-color: #f08080;
+  border: none;
+  color: white;
+  padding: 5px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 15px;
 }
 
 /*# sourceMappingURL=App.css.map */
