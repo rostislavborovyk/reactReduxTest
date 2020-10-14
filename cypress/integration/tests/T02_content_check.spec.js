@@ -7,24 +7,32 @@ describe('Check main page', () => {
 
   it('Wait for content', () => {
     cy.wait(1100);  // content loads after 1 sec, so it waits 1.1 sec
-    cy.get("div[class=tracksContainer__element]").should("be.visible")
+    cy.get("div[class=tracks__track]").should("be.visible")
   })
 
   it('Check filter', () => {
     cy.get("input[id=filterTrack]").type("House")
-    cy.get("div[class=tracksContainer__element]").within(() => {
-      cy.get('a div').should('contain', 'House')
+    cy.get("div[class=tracks__track]").within(() => {
+      cy.get('li').should('contain', 'House')
     })
     cy.get("input[id=filterTrack]").clear()
-
   })
 
   it('Check add track', () => {
     cy.get("input[id=addTrack]").type("TestTrack")
-    cy.get("div[class=navbarContainer__input] button").click()
-    cy.get("div[class=tracksContainer] div:last-child").within(() => {
-      cy.get('a div[class=tracksContainer__track]').should('contain', 'TestTrack')
+    cy.get("div[class=navbar__input] button").click()
+    cy.get("ul[class=tracks__list] div:last-child").within(() => {
+      cy.get('a li').should('contain', 'TestTrack')
     })
+  })
 
+  it('Check delete track', () => {
+    cy.get("ul[class=tracks__list] div:last-child").within(() => {
+      cy.get('a li').should('contain', 'TestTrack')
+      cy.get("div[class=tracks__delete] button").click()
+    })
+    cy.get("ul[class=tracks__list] div:last-child").within(() => {
+      cy.get('a li').should('not.contain', 'TestTrack')
+    })
   })
 })
