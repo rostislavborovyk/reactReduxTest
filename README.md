@@ -13,3 +13,5 @@
 ```shell script
 bash tests.sh
 ```
+
+Also all tests run before each commit through git hook
