@@ -15,10 +15,11 @@
 
 .tracks {
   display: flex;
+  flex: 1 1 600px;
   justify-content: space-around;
 }
 .tracks .container {
-  width: 30%;
+  width: 600px;
 }
 .tracks .container .tracks__list {
   display: flex;
@@ -27,8 +28,13 @@
   justify-content: space-between;
   padding: 0;
 }
-.tracks .container .tracks__list li {
+.tracks .container .tracks__list div a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   list-style-type: none;
+  text-decoration: none;
+  color: #fff;
 }
 .tracks .container .tracks__track {
   display: flex;

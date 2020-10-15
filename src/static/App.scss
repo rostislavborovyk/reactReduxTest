@@ -25,10 +25,11 @@ $bradius: 15px;
 
 .tracks {
   display: flex;
+  flex: 1 1 600px;
   justify-content: space-around;
 
   .container {
-    width: 30%;
+    width: 600px;
 
     .tracks__list {
       display: flex;
@@ -37,8 +38,13 @@ $bradius: 15px;
       justify-content: space-between;
       padding: 0;
 
-      li {
+      div a {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         list-style-type: none;
+        text-decoration: none;
+        color: #fff;
       }
     }
 
