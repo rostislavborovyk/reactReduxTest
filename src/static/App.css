@@ -1,32 +1,66 @@
 .navbar {
   display: flex;
-  justify-content: center;
   background-color: #faebd7;
 }
-.navbar .navbar__input {
+.navbar .container {
+  width: 100%;
+}
+.navbar .container .navbar__row {
+  display: flex;
+}
+.navbar .container .navbar__row .navbar__tools {
+  display: flex;
+  flex-direction: row-reverse;
+  width: 66.7%;
+}
+.navbar .container .navbar__row .navbar__tools .navbar__element {
   padding: 20px;
+  margin: 10px;
   background-color: #eadbb7;
   border-radius: 15px;
 }
-.navbar .navbar__row {
+.navbar .container .navbar__row .navbar__auth {
   display: flex;
-  flex-direction: row;
+  justify-content: flex-end;
+  width: 33.3%;
+}
+.navbar .container .navbar__row .navbar__auth .navbar__element {
+  padding: 5px;
+  margin: 10px;
+  background-color: #eadbb7;
+  border-radius: 15px;
+}
+.navbar .container .navbar__row .navbar__auth .navbar__element button {
+  padding: 20px 20px;
+  border-radius: 15px;
+  border: 0px;
 }
 
 .tracks {
   display: flex;
-  flex: 1 1 600px;
-  justify-content: space-around;
+  flex: 1 1 auto;
+}
+.tracks .auth {
+  display: flex;
+  flex: 1 1 auto;
+  width: 33.3%;
+  justify-content: center;
+}
+.tracks .empty {
+  width: 33.3%;
 }
 .tracks .container {
-  width: 600px;
+  display: flex;
+  flex: 1 1 auto;
+  width: 33.4%;
+  justify-content: center;
 }
 .tracks .container .tracks__list {
   display: flex;
-  flex: 1 1 auto;
   flex-direction: column;
   justify-content: space-between;
   padding: 0;
+  width: 100%;
 }
 .tracks .container .tracks__list div a {
   display: flex;

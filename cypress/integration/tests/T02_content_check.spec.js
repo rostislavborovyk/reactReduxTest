@@ -20,7 +20,7 @@ describe('Check main page', () => {
 
   it('Check add track', () => {
     cy.get("input[id=addTrack]").type("TestTrack")
-    cy.get("div[class=navbar__input] button").click()
+    cy.get("div[class=navbar__element] button[id=addTrack]").click()
     cy.get("ul[class=tracks__list] div:last-child").within(() => {
       cy.get('a li').should('contain', 'TestTrack')
     })

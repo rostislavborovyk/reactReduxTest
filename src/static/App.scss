@@ -8,35 +8,87 @@ $bradius: 15px;
 
 .navbar {
   display: flex;
-  justify-content: center;
+  //justify-content: center;
   background-color: $c1;
 
-  .navbar__input {
-    padding: 20px;
-    background-color: $c2;
-    border-radius: $bradius;
+  .container {
+    width: 100%;
+
+    .navbar__row {
+      display: flex;
+      //flex-wrap: wrap;
+
+      .navbar__tools {
+        display: flex;
+        flex-direction: row-reverse;
+        width: 66.7%;
+
+        .navbar__element {
+
+          padding: 20px;
+          margin: 10px;
+          background-color: $c2;
+          border-radius: $bradius;
+
+        }
+      }
+
+      .navbar__auth {
+        display: flex;
+        justify-content: flex-end;
+        width: 33.3%;
+
+        .navbar__element {
+          padding: 5px;
+          margin: 10px;
+          background-color: $c2;
+          border-radius: $bradius;
+
+          button {
+            padding: 20px 20px;
+            border-radius: $bradius;
+            border: 0px;
+          }
+
+        }
+      }
+    }
   }
 
-  .navbar__row {
-    display: flex;
-    flex-direction: row;
-  }
 }
 
 .tracks {
   display: flex;
-  flex: 1 1 600px;
-  justify-content: space-around;
+  flex: 1 1 auto;
+
+  .auth {
+    display: flex;
+    flex: 1 1 auto;
+
+    width: 33.3%;
+    justify-content: center;
+
+  }
+
+  .empty {
+    width: 33.3%;
+  }
 
   .container {
-    width: 600px;
+    display: flex;
+    flex: 1 1 auto;
+
+    width: 33.4%;
+    justify-content: center;
+
 
     .tracks__list {
       display: flex;
-      flex: 1 1 auto;
+      //flex: 1 1 400px;
       flex-direction: column;
       justify-content: space-between;
       padding: 0;
+      width: 100%;
 
       div a {
         display: flex;
